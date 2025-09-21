@@ -1,9 +1,9 @@
 import streamlit as st
-from openai import OpenAI
+from google import genai
 
 def get_openai_answer(text):
     api_key = st.secrets["MY_API_KEY"]
-    client = OpenAI(api_key = api_key)
+    client = genai(api_key = api_key)
        
     prompt = f" Create 10 multiple choice questions with four choices about {text} make sure these aren't just clarifying questions but rather questions that are meaningful"
 
